@@ -1,6 +1,6 @@
 # Introduction
 
-This file describe what we expect to have at the end of the course given at ensimag
+This file describe what we expect to have at the end of the course given at ENSIMAG
 
 # Project description
 
