@@ -5,4 +5,4 @@
 # prod will go on openstack on premice
 
 echo "Test secure key"
-echo "$SOMEVAR"
+echo "SOMEVAR=$SOMEVAR"
