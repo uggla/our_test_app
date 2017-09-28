@@ -13,3 +13,6 @@ deploy:
   script: scripts/deploy.sh staging
   on:
     all_branches: true
+notifications:
+  slack:
+    secure: eiIqOcA+khAig0AIwn+vHDofs6ogVd4ZkXW7+5fH0p26jqbFL5hU+jYSFdEYjSb/MiEzBKOMkwHDrNy1l3TbK0++aDHAN0jIwkzqM8Vo8k5txXw0wNqSKprvThvY4O9vMavzx1xDVRti2JMz4b1Z4ezBi7+9o0UL3+ghrHmzco/Q5WvAGK/lgGz8BNrhh/l6l0E8Y1xaSxG+9ETYdJs7lTMq/NkBKaG9lpORPhzXUC2fP7YxKu0Yb0oku4nVYMHonqBocNNx+eT1rtT4ebTKKzkksU2IL+LDoUGFppCyI2MBcfPTLROKZQNqi12vZv4Kjr7QAm6k/kJV+ESVEQ9alEXZHE2QHeNBkOOt9OQyByS1ZudXcdYDkNA7qZ6o+jUxFT1VA2CsPYE0KAHFTmG72xWdT0+PNdSrN1geZXdbjh+OedHj+j+IVIAGUIrZdbPlpf3Z//VQczpDuCDkXk4oz3x67rTO17+lyKfqu6YWhkJcrJpa0+nF1tqVALInza05mNyPsYm9D3iFHwaYa7dem/jGk/Yj9qu7gSE3g0X5daQ97kIxDWL5eSTR5pY6cluRMewvJu9EZkM9W2qHJQ9kksTvg1Nsh826o2tSTf9h44AjVPDG34Tsfw90l0c6DyOL2qcclOTO0RrwwE3ThYwEb8+p39/O/m5mKL+PdJOz9lc=
