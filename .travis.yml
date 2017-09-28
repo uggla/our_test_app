@@ -1,27 +1,14 @@
 env:
   global:
-    secure: ny/CcBoq2HLAudSn9g7yta7RcfTll7WZQKEBNoqwUZuc+AwLDdkY6H1R+IHNxJ5fhNqxaM5XIsUcwvozVz8H5wD9iKtLJTB7gNCM015QmjlRaX1wbXJshMC5GT/Z0t78vrSzhX3ciDjw787BlNTiBEUOQwWeVQrXRk3pSWillhyTnlJKNmiApnxj6T099qxowxiOD0trPAsIAQqyphIeTOZnnJGO1XZdEhNPaf8LguliR8Ncnx0ySdPrOuzNwNVu8bCihm/dIs+GwpvUuhpJvEH71GmrtPhv3wE7471Hjg8E5TkvASkzVukaKh0bFeeabS/F3wKPC7q2CVU8II/0lxHOvVSbiYO9ZiLH7NL2MTPD2p/nmm06kcDIt27l0jtZXXUjRE1YuLy0U2N9bI5iDR48EzcRplMJLZvq2ki7Ermu9P5NokYGob7a+X/nRBnmzJytZ1ZAlx/lAEhjTOaViCIhztN59R+KqPJ8XQ3+QFU5/qVepK7uUV8sI/o0R0cdXMXQCRxHI9AzEQ+GQxHl1udYhbSvgHFJJ/Pz9yAo4wNv6yPhQ0AGFQZQFdJ1Nu8Q6BBqL+2lf/t2hX74x2cdv9oK0EMzoiqA0TB7w3ttYvf+bZACi5XItVHYljDHYAJcoToQiseHYjhRZIjDNPGGRbyV/2iDj8xSZB7A+4HIKBE=
+    secure: ZE++I+1Toaiqvm+P1RIrZWx+sA8Yz1SEeSIyR5WwxUxzOEwrm8GNuCGiL79T1eGQQv16jAxBI3Sqwi9Vbo7r/m2CYkiC8tT6JqmDPzsaEdMH2tnVsu1NdaUUuRucFOZeBKAcxBQgp9wbpIXFm6fnEaOAGE9t7BTGpPVzQJ4dAUAYf6y7f+wuW25mtOEjZkRxPsL0uyBvGU5koMMkvhXtoOjgLI64CN4ILBv/aWMjHCMZ1JmB4f/TFVgSTgC2kQ/zbpH7N92rbkiklxylBIUcTJxx6m57Q1s2+PgTTKK+UiPHsdADTMn0130BFNH+KFyBenmfqc/OjvOGw2AFD71tKzsDdDFapnRLyJ9oHfJ6hVYO1xEZA58OSfREpV/K0WCWkRWQ5TY5g5jWszt3HqGH/OtSIvH5mKv4Ark3r2oSTjRAjCncaBzcv6mGhQXDPpj7nvE0ew0TA4NUAVoCZJh0FzkDWvrXy2++SzHwjANPYUWd3G5TQVaZevTK+5vP9wQXw1cx2zuqAX2ENIfKddQcm9shzmHpvh/Y86ynZjJ+9DqSU4xS1qHFV6dbzhjKq+1Jlar6NKSuk8E8ukLgo2gn6UW1pYrhQoVf7Xq1Kr8HLUmEBF2cZqK6tBNKaa+atlJMsVmWViwktuU2a0OsFQ3Ven8w0yicj7FLTRKm9sO3ROI=
 language: python
 python:
 - '3.4'
-
-# command to install dependencies
 install:
 - pip install -r requirements.txt
-
-# command to run tests
 script: py.test
-
-# deploy part
 deploy:
-  # deploy develop to the staging environment
-  - provider: script
-    script: scripts/deploy.sh staging
-    on:
-      all_branches: true
-    #   branch: develop
-  # # deploy master to production
-  # - provider: script
-    # script: scripts/deploy.sh production
-    # on:
-    #   branch: master
+- provider: script
+  script: scripts/deploy.sh staging
+  on:
+    all_branches: true
