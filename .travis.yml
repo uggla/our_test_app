@@ -1,9 +1,26 @@
+env:
+  global:
+    secure: ny/CcBoq2HLAudSn9g7yta7RcfTll7WZQKEBNoqwUZuc+AwLDdkY6H1R+IHNxJ5fhNqxaM5XIsUcwvozVz8H5wD9iKtLJTB7gNCM015QmjlRaX1wbXJshMC5GT/Z0t78vrSzhX3ciDjw787BlNTiBEUOQwWeVQrXRk3pSWillhyTnlJKNmiApnxj6T099qxowxiOD0trPAsIAQqyphIeTOZnnJGO1XZdEhNPaf8LguliR8Ncnx0ySdPrOuzNwNVu8bCihm/dIs+GwpvUuhpJvEH71GmrtPhv3wE7471Hjg8E5TkvASkzVukaKh0bFeeabS/F3wKPC7q2CVU8II/0lxHOvVSbiYO9ZiLH7NL2MTPD2p/nmm06kcDIt27l0jtZXXUjRE1YuLy0U2N9bI5iDR48EzcRplMJLZvq2ki7Ermu9P5NokYGob7a+X/nRBnmzJytZ1ZAlx/lAEhjTOaViCIhztN59R+KqPJ8XQ3+QFU5/qVepK7uUV8sI/o0R0cdXMXQCRxHI9AzEQ+GQxHl1udYhbSvgHFJJ/Pz9yAo4wNv6yPhQ0AGFQZQFdJ1Nu8Q6BBqL+2lf/t2hX74x2cdv9oK0EMzoiqA0TB7w3ttYvf+bZACi5XItVHYljDHYAJcoToQiseHYjhRZIjDNPGGRbyV/2iDj8xSZB7A+4HIKBE=
 language: python
 python:
-  - "3.4"
+- '3.4'
+
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
+
 # command to run tests
 script: py.test
 
+# deploy part
+deploy:
+  # deploy develop to the staging environment
+  - provider: script
+    script: scripts/deploy.sh staging
+    # on:
+    #   branch: develop
+  # # deploy master to production
+  # - provider: script
+    # script: scripts/deploy.sh production
+    # on:
+    #   branch: master
