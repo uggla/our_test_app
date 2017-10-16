@@ -11,12 +11,13 @@ python:
 - '3.4'
 install:
 - pip install -r requirements.txt
-- pip install python-openstackclient
-- docker-compose build
+  #- pip install python-openstackclient
+  #- docker-compose build
 script: py.test
 after_success:
 - docker images
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+- source script/openrc.sh
 - export OS_PASSWORD="$OS_PASSWORD"
 - openstack server list
 deploy:
