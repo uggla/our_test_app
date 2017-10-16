@@ -17,7 +17,7 @@ script: py.test
 after_success:
 - docker images
 - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-- script/deploy.sh staging
+- scripts/deploy.sh staging
 deploy:
 - provider: script
   script: scripts/deploy.sh staging
