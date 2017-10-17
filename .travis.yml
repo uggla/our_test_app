@@ -10,13 +10,18 @@ language: python
 python:
 - '3.4'
 install:
+- sudo apt-get install -y jq
 - pip install -r requirements.txt
 - pip install python-openstackclient
-  #- docker-compose build
+- docker-compose build
 script: py.test
 after_success:
 - docker images
 deploy:
+- provider: script
+  script: scripts/push_images.sh
+  on:
+    all_branches: true
 - provider: script
   script: scripts/deploy.sh staging
   on:
