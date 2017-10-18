@@ -24,9 +24,11 @@ openstack server create --image "$IMAGE" --flavor "$FLAVOR" --key-name "$KEYNAME
 openstack server create --image "$IMAGE" --flavor "$FLAVOR" --key-name "$KEYNAME" d3_$TRAVIS_COMMIT --wait
 
 # Get the ips
-d1ip=$(openstack server show d1_$TRAVIS_COMMIT -f json | jq -r '.[] | select(.Field | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
-d2ip=$(openstack server show d2_$TRAVIS_COMMIT -f json | jq -r '.[] | select(.Field | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
-d3ip=$(openstack server show d3_$TRAVIS_COMMIT -f json | jq -r '.[] | select(.Field | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
+openstack server show d1_$TRAVIS_COMMIT -f json
+
+d1ip=$(openstack server show d1_$TRAVIS_COMMIT -f json | jq -r '.[] | select(."Field" | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
+d2ip=$(openstack server show d2_$TRAVIS_COMMIT -f json | jq -r '.[] | select(."Field" | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
+d3ip=$(openstack server show d3_$TRAVIS_COMMIT -f json | jq -r '.[] | select(."Field" | contains("addresses"))'.Value | awk -F ',' '{print $NF}' | sed -r 's/\s//g')
 
 echo "Intance:IPs"
 echo "d1:$d1ip"
